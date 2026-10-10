@@ -213,6 +213,19 @@ details p{color:var(--muted);padding-bottom:20px;max-width:62ch}
 .contact-row b{font-weight:600;user-select:all}
 .contact .btn{justify-content:center}
 
+/* Agenda Calendly + WhatsApp */
+.btn-wa{background:#25D366;color:#0B1F14;justify-content:center}
+.btn-wa:hover{transform:translateY(-1px)}
+.agenda{display:grid;gap:14px;margin-top:clamp(40px,6vw,64px)}
+.agenda-frame{width:100%;max-width:100%;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#F8F8F5}
+.agenda-frame iframe{display:block;width:100%;height:720px;border:0}
+@media (max-width:640px){.agenda-frame iframe{height:860px}}
+.wa-float{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:30;display:flex;align-items:center;gap:10px;text-decoration:none}
+.wa-float svg{width:58px;height:58px;padding:13px;border-radius:50%;background:#25D366;color:#fff;box-shadow:0 8px 24px rgba(10,16,20,.3);transition:transform .15s ease}
+.wa-float:hover svg{transform:scale(1.08)}
+.wa-tip{background:var(--surface);color:var(--ink);border:1px solid var(--line);font-size:.88rem;font-weight:600;padding:.5em .85em;border-radius:8px;box-shadow:0 6px 18px rgba(10,16,20,.15);opacity:0;transform:translateX(6px);transition:opacity .2s,transform .2s;pointer-events:none;white-space:nowrap}
+.wa-float:hover .wa-tip{opacity:1;transform:none}
+@media (max-width:640px){.wa-tip{display:none}.wa-float svg{width:52px;height:52px;padding:12px}}
 footer{border-top:1px solid var(--line);padding-block:28px;font-size:.88rem;color:var(--muted)}
 .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 </style>
@@ -409,12 +422,26 @@ footer{border-top:1px solid var(--line);padding-block:28px;font-size:.88rem;colo
         <p class="lede" style="margin-top:20px">On vous dit franchement si ça peut marcher chez vous, combien de demandes viser et à quel coût. Si ce n'est pas le cas, on vous le dit aussi.</p>
       </div>
       <div class="contact">
-        <a class="btn btn-primary" id="booking" href="#rdv">Choisir un créneau</a>
-        <div class="contact-row"><span class="label">Téléphone</span><b id="c-phone">À renseigner</b></div>
-        <div class="contact-row"><span class="label">E-mail</span><b id="c-mail">À renseigner</b></div>
+        <a class="btn btn-primary" id="booking" href="#agenda">Choisir un créneau</a>
+        <a class="btn btn-wa" href="https://wa.me/33662013243?text=Bonjour%2C%20je%20viens%20du%20site%20Granit%20Studio%20et%20je%20voudrais%20en%20savoir%20plus%20pour%20mon%20entreprise." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Écrire sur WhatsApp
+        </a>
+        <div class="contact-row"><span class="label">WhatsApp</span><b id="c-phone">06 62 01 32 43</b></div>
+      </div>
+    </div>
+    <div class="wrap agenda" id="agenda">
+      <p class="label">Agenda · réponse immédiate</p>
+      <div class="agenda-frame">
+        <iframe src="https://calendly.com/arthur-signorel/30min?hide_gdpr_banner=1&amp;hide_landing_page_details=1&amp;background_color=f8f8f5&amp;text_color=162127&amp;primary_color=162127" title="Réserver un appel avec Granit Studio" loading="lazy"></iframe>
       </div>
     </div>
   </section>
+
+  <a class="wa-float" href="https://wa.me/33662013243?text=Bonjour%2C%20je%20viens%20du%20site%20Granit%20Studio%20et%20je%20voudrais%20en%20savoir%20plus%20pour%20mon%20entreprise." target="_blank" rel="noopener" aria-label="Nous écrire sur WhatsApp">
+    <span class="wa-tip">Une question ? Écrivez-nous</span>
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
 </main>
 
 <footer>
