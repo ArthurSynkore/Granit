@@ -7,7 +7,7 @@ En ligne : https://arthursynkore.github.io/granit/ (GitHub Pages, branche `main`
 ## Structure
 
 ```
-index.html              page d'accueil (VSL, méthode, garantie, résultats, FAQ, agenda Calendly, WhatsApp)
+index.html              page d'accueil (téléphone de démo, méthode, modèle, résultats, prix, FAQ, agenda Calendly, WhatsApp)
 mentions-legales.html   mentions légales (obligatoires)
 confidentialite.html    politique de confidentialité (RGPD)
 404.html                page introuvable
@@ -15,8 +15,8 @@ robots.txt, sitemap.xml référencement
 assets/
   style.css             toute la mise en forme (charte : diorite claire, ardoise, jaune chantier)
   fonts/                polices hébergées sur le site (Barlow Condensed, Public Sans, IBM Plex Mono)
-  diorite-vsl.mp4       vidéo de présentation (26 s)
-  vsl-cover.jpg         image affichée avant lecture
+  diorite-vsl.mp4       vidéo de présentation (26 s) — retirée de la page pour l'instant, gardée pour la remettre
+  vsl-cover.jpg         image de couverture de la vidéo
   og-image.jpg          aperçu quand le lien est partagé (WhatsApp, LinkedIn, Facebook…)
   diorite-studio-logo*.svg, favicon.svg, apple-touch-icon.png, icon-512.png
 ```
